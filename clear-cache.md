@@ -1,6 +1,6 @@
 # WP - Clear cloudflare and Varnish caché on update
 
-´´´php
+```php
 <?php
 /**
  * Purga automática de Varnish y Cloudflare al guardar cambios
@@ -57,4 +57,4 @@ function auto_purge_varnish_and_cloudflare( $post_id, $post, $update ) {
         ) );
     }
 }
-´´´
+```

@@ -58,3 +58,28 @@ function auto_purge_varnish_and_cloudflare( $post_id, $post, $update ) {
     }
 }
 ```
+
+
+##Dónde obtener las credenciales de Cloudflare
+Para que el script se comunique con Cloudflare, debes reemplazar las dos constantes al inicio del código:
+
+## CF_ZONE_ID:
+
+Entra al panel de Cloudflare y selecciona el dominio fernandoaylwin.cl.
+
+En la pestaña Overview (Información general), baja en la columna de la derecha hasta la sección API. Ahí verás tu Zone ID.
+
+## CF_API_TOKEN:
+
+Haz clic en el ícono de tu perfil (arriba a la derecha en Cloudflare) > My Profile > API Tokens.
+
+Haz clic en Create Token.
+
+Usa la plantilla Cache Purge (o crea uno personalizado con el permiso Zone - Cache Purge - Edit).
+
+Selecciona el dominio correspondiente, genera el Token y cópialo.
+
+## Ventajas de esta solución
+Cero bloatware: Eliminas el plugin "Proxy Cache Purge", liberando memoria y quitando menús innecesarios del panel.
+Proceso silencioso: Trabaja en segundo plano sin interfaces molestas ni llamadas externas comerciales.
+Precisión: Al actualizar una página (como el Home), borra inmediatamente el caché de Varnish y manda la instrucción por API a Cloudflare en un solo disparo.
